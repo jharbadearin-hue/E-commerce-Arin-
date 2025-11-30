@@ -24,6 +24,6 @@ This project is a modern e-commerce website built with HTML, CSS, and JavaScript
 
 ## 🚀 Deployment Link (Mandatory)
 Live Project Link:  
-https://your-deployed-project-link.com
+https://jharbadearin-hue.github.io/E-commerce-Arin-/
 
 ---
