@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Checkout — Simple Shop</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">Simple Shop</div>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="cart.html">Cart</a>
+        <a id="nav-login" href="login.html">Login</a>
+      </nav>
+    </header>
+
+    <main style="margin-top:18px;">
+      <div style="display:grid; grid-template-columns: 1fr 380px; gap:18px;">
+        <div>
+          <h2>Checkout</h2>
+          <form id="checkout-form" class="form" style="display:block;">
+            <label for="name">Full name</label>
+            <input name="name" id="name" required>
+
+            <label for="email">Email</label>
+            <input name="email" id="email" type="email" required>
+
+            <label for="address">Shipping address</label>
+            <textarea name="address" id="address" rows="3" required></textarea>
+
+            <div style="display:flex; gap:8px;">
+              <div style="flex:1;">
+                <label for="city">City</label>
+                <input name="city" id="city" required>
+              </div>
+              <div style="width:120px;">
+                <label for="zipcode">ZIP</label>
+                <input name="zipcode" id="zipcode" required>
+              </div>
+            </div>
+
+            <label style="margin-top:8px;">Payment method</label>
+            <div style="display:flex;gap:8px;margin-top:6px;">
+              <label><input type="radio" name="payment" value="card" required> Card</label>
+              <label><input type="radio" name="payment" value="upi"> UPI</label>
+              <label><input type="radio" name="payment" value="cod"> Cash on Delivery</label>
+            </div>
+
+            <div style="margin-top:12px;">
+              <button class="btn" type="submit">Place Order</button>
+              <a class="btn secondary" href="cart.html" style="margin-left:8px;">Back to Cart</a>
+            </div>
+          </form>
+          <div id="checkout-confirmation" style="margin-top:14px;"></div>
+        </div>
+        <div id="checkout-summary"></div>
+      </div>
+    </main>
+
+    <div class="footer">
+      <p class="small text-muted">This is a demo checkout: no payment data is transmitted.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

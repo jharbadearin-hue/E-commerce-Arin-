@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Login — Simple Shop</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">Simple Shop</div>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="cart.html">Cart <span id="cart-count" class="small"></span></a>
+      </nav>
+    </header>
+
+    <main style="margin-top:18px;">
+      <div style="max-width:520px;margin:0 auto;">
+        <div class="form">
+          <h2>Login</h2>
+          <p class="small text-muted">For demo: any email + password with length ≥6 will "login".</p>
+          <form id="loginForm">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Minimum 6 characters" required>
+
+            <div style="margin-top:14px; display:flex; gap:8px;">
+              <button class="btn" type="submit">Login</button>
+              <a class="btn secondary" href="index.html">Continue as guest</a>
+            </div>
+            <div id="login-msg" class="small text-muted" style="margin-top:10px;"></div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+  
+    document.getElementById('loginForm').addEventListener('submit', function(ev){
+      ev.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+     
+      if (!/^\S+@\S+\.\S+$/.test(email)) {
+        document.getElementById('login-msg').textContent = 'Enter a valid email address.';
+        return;
+      }
+      if (password.length < 6) {
+        document.getElementById('login-msg').textContent = 'Password should be at least 6 characters.';
+        return;
+      }
+
+      loginUser(email);
+      document.getElementById('login-msg').textContent = 'Logged in as ' + email + '. Redirecting to products...';
+      setTimeout(()=>{ window.location.href = 'index.html'; }, 700);
+    });
+  </script>
+</body>
+</html>

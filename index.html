@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title> YOURZONE — Home</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">YOURZONE</div>
+      <nav aria-label="Main navigation">
+        <a href="index.html" class="active">Products</a>
+        <a href="about.html">About</a>
+        <a href="cart.html">Cart <span id="cart-count" class="small" style="background:#ffdede;padding:2px 6px;border-radius:8px;margin-left:6px;"></span></a>
+        <a id="nav-login" href="login.html">Login</a>
+        <span id="nav-user" style="display:none;"></span>
+        <button id="nav-logout" class="btn secondary" style="display:none;margin-left:10px;">Logout</button>
+      </nav>
+    </header>
+    <main>
+      <section style="margin-top:18px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <h1 style="margin-bottom:6px;">Products</h1>
+            <div class="small text-muted">Browse our curated selection.</div>
+          </div>
+          <div>
+            <a class="btn" href="cart.html">Go to Cart</a>
+          </div>
+        </div>
+        <div id="products-root">
+            <img src="https://m.media-amazon.com/images/I/61k3dUxzsiL._SL1500_.jpg" alt="Headphones">
+
+        </div>
+      </section>
+
+      <div class="footer">
+        <p>Built with ❤️ —  e-commerce </p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
